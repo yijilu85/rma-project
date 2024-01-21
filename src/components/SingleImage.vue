@@ -27,7 +27,6 @@ const raster = function () {
   context.drawImage(img, 0, 0)
   var imgData = context.getImageData(0, 0, canvas.width, canvas.height)
 
-  // console.log(imgData)
   var rasterSize = rasterSlider.value
   var greyscaleFactor = (greyscaleSlider.value / 100) * -1
 
