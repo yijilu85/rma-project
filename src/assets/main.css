@@ -1,8 +1,7 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
+  min-width: 650px;
   padding: 2rem;
   font-weight: normal;
 }
@@ -15,21 +14,50 @@ a,
   padding: 3px;
 }
 
+input[type='range'] {
+  accent-color: hsla(160, 100%, 37%, 1);
+}
+
+.button-primary {
+  background-color: hsla(160, 100%, 37%, 1);
+  color: white;
+  padding: 0.5em 1em;
+  transition: 0.4s;
+  border-radius: 3px;
+}
+
+.button-flex {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.feather-white {
+  width: 25px;
+  height: 25px;
+  filter: invert(100%);
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+  position: relative;
+}
+
+h3 {
+  font-size: 1rem;
+}
 @media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+  .button-primary:hover {
+    background-color: hsla(160, 100%, 37%, 0.8);
   }
 }
 
 @media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
 }
