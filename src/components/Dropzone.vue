@@ -68,7 +68,7 @@ const emit = defineEmits(['file-selected', 'file-deselected'])
       Clear<span v-if="dropzoneFile" class="bold"> selected file: </span>{{ dropzoneFile.name }}
     </button>
 
-    <a href="sample.json" target="_blank">Sample JSON file</a>
+    <a href="sample.json" target="_blank" download>Sample JSON file</a>
   </div>
 </template>
 
