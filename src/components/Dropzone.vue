@@ -59,13 +59,13 @@ const emit = defineEmits(['file-selected', 'file-deselected'])
     @drop.prevent="drop"
     :class="{ 'active-dropzone': active }"
   >
-    <span>Drag and drop JSON file</span>
-    <span>OR</span>
+    <span class="bold">Drag and drop JSON file</span>
+    <span class="bold">OR</span>
     <label class="button-primary" for="fileInput">Select File</label>
     <input type="file" @change="handleFileChange" id="fileInput" ref="fileInput" />
 
     <button @click="clearInput" class="clearInput" :disabled="!dropzoneFile">
-      Clear<span v-if="dropzoneFile"> selected file: </span>{{ dropzoneFile.name }}
+      Clear<span v-if="dropzoneFile" class="bold"> selected file: </span>{{ dropzoneFile.name }}
     </button>
 
     <a href="sample.json" target="_blank">Sample JSON file</a>
@@ -106,6 +106,7 @@ const emit = defineEmits(['file-selected', 'file-deselected'])
   background-color: #ffffff;
   border: none;
   color: hsla(160, 100%, 37%, 1);
+  font-weight: 800;
 }
 
 .clearInput:hover {
@@ -118,6 +119,10 @@ const emit = defineEmits(['file-selected', 'file-deselected'])
   cursor: default;
   text-decoration: none;
   color: grey;
+}
+
+.bold {
+  font-weight: 800;
 }
 
 @media (min-width: 1024px) {
