@@ -16,7 +16,6 @@ var canvas
 var context
 var rasterSlider
 var greyscaleSlider
-var showImg = ref(true)
 var flippedHorizonally = false
 var flippedVertically = false
 var img = new Image()
@@ -149,22 +148,14 @@ const loadCanvas = function () {
   context = canvas.getContext('2d')
   canvas.width = img.width
   canvas.height = img.height
-
-  // console.log(canvas)
   rasterSlider = document.getElementById('rasterSlider')
   greyscaleSlider = document.getElementById('greyscaleSlider')
-  showImg = false
   raster()
-  console.log(showImg)
 }
 
 const loadImg = function () {
-  // console.log('loaded func')
-  // console.log(sourceImage.value.src)
-
   img.src = sourceImage.value.src
   img.addEventListener('load', function () {
-    // console.log('inner loaded')
     loadCanvas()
   })
 }
@@ -173,7 +164,7 @@ const hslToRgb = function (h, s, l) {
   let r, g, b
 
   if (s === 0) {
-    r = g = b = l // achromatic
+    r = g = b = l
   } else {
     let hue2rgb = function (p, q, t) {
       if (t < 0) t += 1
@@ -206,7 +197,7 @@ const rgbToHsl = function (r, g, b) {
     l = (max + min) / 2
 
   if (max === min) {
-    h = s = 0 // achromatic
+    h = s = 0
   } else {
     let d = max - min
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
@@ -225,9 +216,6 @@ const rgbToHsl = function (r, g, b) {
   }
   return [h, s, l]
 }
-onMounted(() => {
-  // console.log(`the component is now mounted.`)
-})
 
 const emit = defineEmits(['singleImageLoaded'])
 </script>

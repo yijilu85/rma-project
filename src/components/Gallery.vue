@@ -23,12 +23,10 @@ const load = function () {
   for (let i = 0; i < files.arr.length; i++) {
     arr.push(files.arr[i])
     if (!filters.value.includes(files.arr[i].category)) {
-      console.log(files.arr[i].category)
       filters.value.push(files.arr[i].category)
     }
   }
   imported = true
-  console.log(arr.length)
   loadFilter('all')
 }
 
@@ -53,7 +51,6 @@ const loadFilter = function (category) {
 
 const loadImg = function (img) {
   single.value = img
-  console.log('single', single)
 }
 
 const setFileSelection = (fileData) => {
@@ -123,7 +120,6 @@ ul.filter-list li.active a {
 }
 
 .button-inactive {
-  /* background-color: hsla(160, 100%, 37%, 1); */
   color: white;
   padding: 0.5em 1em;
   transition: 0.4s;
@@ -173,7 +169,6 @@ div.gallery-item {
 }
 
 div.gallery-item img:hover {
-  /* box-shadow: 3px 3px 1px #ccc; */
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
 }
 
